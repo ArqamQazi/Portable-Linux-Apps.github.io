@@ -1,0 +1,1 @@
+{"name":"spek","description":"Spek is an acoustic spectrum analyser written in C++. It uses FFmpeg libraries for audio decoding and wxWidgets for the GUI.","screenshots":["/contribute_ss.webp"],"sites":["https://github.com/pkgforge-dev/spek-appimage"],"sources":["https://github.com/pkgforge-dev/spek-appimage"],"archived":false}

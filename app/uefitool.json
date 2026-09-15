@@ -1,0 +1,1 @@
+{"name":"uefitool","description":"UEFITool is a cross-platform open source application, that parses UEFI PI-compatible\nfirmware image into a tree structure, verifies image integrity and provides a GUI to manipulate image elements.","screenshots":["/contribute_ss.webp"],"sites":["https://github.com/pkgforge-dev/UEFITool-AppImage"],"archived":false}

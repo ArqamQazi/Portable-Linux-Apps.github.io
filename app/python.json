@@ -1,0 +1,1 @@
+{"name":"python","description":"AppImage distributions of Python, an interactive high-level object-oriented language.\n \n To install multiple versions, use the dedicated third-party database named \"python\" in \"am-extras\". See \"am -h\" or \"appman -h\".","screenshots":["/contribute_ss.webp"],"sites":["https://github.com/niess/python-appimage"],"archived":false}

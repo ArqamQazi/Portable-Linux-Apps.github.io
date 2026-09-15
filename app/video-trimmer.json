@@ -1,0 +1,1 @@
+{"name":"video-trimmer","description":"Video Trimmer cuts out a fragment of a video given the start and end timestamps. The video is never re-encoded, so the process is very fast and does not reduce the video quality.","screenshots":["/contribute_ss.webp"],"sites":["https://github.com/pkgforge-dev/Video-Trimmer-AppImage"],"archived":false}

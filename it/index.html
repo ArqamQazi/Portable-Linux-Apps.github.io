@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTABLE LINUX APPS</title>
+  <meta name="description" content="The first AUR-inspired Software Center of all AppImage packages and portable applications for GNU/Linux.">
+  <meta property="og:title" content="PORTABLE LINUX APPS">
+  <meta property="og:description" content="The first AUR-inspired Software Center of all AppImage packages and portable applications for GNU/Linux.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portable-linux-apps.github.io/it/index.html">
+  <meta property="og:image" content="https://portable-linux-apps.github.io/pla.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PORTABLE LINUX APPS">
+  <meta name="twitter:image" content="https://portable-linux-apps.github.io/pla.jpg">
+  <meta name="twitter:description" content="The first AUR-inspired Software Center of all AppImage packages and portable applications for GNU/Linux.">
+  <link rel="canonical" href="https://portable-linux-apps.github.io/it/index.html">
+  <link rel="icon" href="/Portable-Linux-Apps.github.io/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/Portable-Linux-Apps.github.io/assets/css/style.css">
+  <link rel="stylesheet" href="/Portable-Linux-Apps.github.io/assets/css/index.css">
+  <link rel="stylesheet" href="/Portable-Linux-Apps.github.io/assets/css/faq.css">
+  <link rel="stylesheet" href="/Portable-Linux-Apps.github.io/assets/css/asciinema-player.css">
+  <meta name="keywords" content="Portable, Linux, AppImage, AppImages, download, install, program, programs, application, applications, app, apps, package, packages, pkg, pkgs">
+</head>
+<body>
+<a href="#main" class="skip-link">Vai al contenuto principale</a>
+
+<nav aria-label="Main navigation">
+  <a href="#">Home</a>
+  <a href="apps.html">App</a>
+  <a href="#faq">FAQ</a>
+  <a href="wiki.html">Wiki</a>
+  <a href="https://github.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io" class="nav-github-link" target="_blank" rel="noopener noreferrer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+    <span>GitHub</span>
+  </a>
+  <div class="lang-selector">
+    <select onchange="localStorage.setItem('preferredLang',this.value);window.location.href='/' + this.value + '/index.html'">
+      <option value="en">EN</option>
+      <option value="it">IT</option>
+    </select>
+    <script>var s=document.querySelector('.lang-selector select');if(s){var l=location.pathname.split('/')[1];if(l)s.value=l;}</script>
+  </div>
+</nav>
+<main>
+
+<header class="hero">
+  <p class="hero-subtitle">Benvenuti nel database più completo di tutti i pacchetti AppImage e delle applicazioni portatili per GNU/Linux.</p>
+  <h1>PORTABLE LINUX APPS</h1>
+  <p class="hero-tagline">Il primo Software Center AppImage ispirato ad AUR!</p>
+</header>
+
+<div class="stats">
+  <strong>3564</strong> unique apps (<strong>2976</strong> AppImage packages + <strong>588</strong> standalone/portable programs), including <strong>4</strong> metapackages containing <strong>74</strong> items.
+  <p><i>Da qui puoi scaricarle, installarle, aggiornarle (davvero), ottenere più informazioni sulle fonti e sui loro sviluppatori... e se vuoi, puoi contribuire tu stesso aggiungendo le informazioni mancanti, perché questo sito è <strong>open source</strong>!</i></p>
+</div>
+
+<div id="lang" style="display: none;">it</div>
+
+<div class="search-box home-search-box">
+  <form id="home-search-form" onsubmit="handleHomeSearch(event)" class="home-search-form">
+    <label for="home-search-input" class="visually-hidden">Cerca app</label>
+    <input type="search" id="home-search-input" placeholder="Cerca app..." autocomplete="off">
+    <label for="home-arch-select" class="visually-hidden">Filter by architecture</label>
+    <select name="arch" id="home-arch-select">
+      <option value="">Tutte le architetture</option>      <option value="x86_64">x86_64</option>
+      <option value="aarch64">aarch64</option>
+      <option value="i686">i686</option>
+      <option value="armv7l">armv7l</option>
+    </select>
+    <button type="submit" class="visually-hidden">Search</button>
+  </form>
+</div>
+
+<section id="search-results" style="display: none;">
+  <div class="search-results-header">
+    <h2 id="search-results-title">Risultati di ricerca</h2>
+    <span id="results-count" class="results-count"></span>
+  </div>
+  <div id="app-list"></div>
+</section>
+
+<section id="categories-section">
+  <h2>Categorie</h2>
+  <ul class="categories-list">
+    <li><a class="category-link" href="appimages.html">AppImages</a></li>
+    <li><a class="category-link" href="appimage-on-the-fly.html">AppImage on the Fly</a></li>
+    <li><a class="category-link" href="ai.html">AI</a></li>
+    <li><a class="category-link" href="am-utils.html">AM Utils</a></li>
+    <li><a class="category-link" href="android.html">Android</a></li>
+    <li><a class="category-link" href="audio.html">Audio</a></li>
+    <li><a class="category-link" href="comic.html">Comic</a></li>
+    <li><a class="category-link" href="command-line.html">Command Line</a></li>
+    <li><a class="category-link" href="communication.html">Communication</a></li>
+    <li><a class="category-link" href="disk.html">Disk</a></li>
+    <li><a class="category-link" href="education.html">Education</a></li>
+    <li><a class="category-link" href="emulator.html">Emulator</a></li>
+    <li><a class="category-link" href="file-manager.html">File Manager</a></li>
+    <li><a class="category-link" href="finance.html">Finance</a></li>
+    <li><a class="category-link" href="game.html">Game</a></li>
+    <li><a class="category-link" href="gnome.html">GNOME</a></li>
+    <li><a class="category-link" href="graphic.html">Graphic</a></li>
+    <li><a class="category-link" href="internet.html">Internet</a></li>
+    <li><a class="category-link" href="kde.html">KDE</a></li>
+    <li><a class="category-link" href="metapackages.html">Metapackages</a></li>
+    <li><a class="category-link" href="office.html">Office</a></li>
+    <li><a class="category-link" href="password.html">Password</a></li>
+    <li><a class="category-link" href="portable.html">Portable</a></li>
+    <li><a class="category-link" href="portable-cli.html">Portable CLI</a></li>
+    <li><a class="category-link" href="portable-desktop.html">Portable Desktop</a></li>
+    <li><a class="category-link" href="steam.html">Steam</a></li>
+    <li><a class="category-link" href="system-monitor.html">System Monitor</a></li>
+    <li><a class="category-link" href="video.html">Video</a></li>
+    <li><a class="category-link" href="virtual-machine.html">Virtual Machine</a></li>
+    <li><a class="category-link" href="wallet.html">Wallet</a></li>
+    <li><a class="category-link" href="web-app.html">Web App</a></li>
+    <li><a class="category-link" href="web-browser.html">Web Browser</a></li>
+    <li><a class="category-link" href="wine.html">Wine</a></li>
+    <li><a class="category-link" href="youtube.html">YouTube</a></li>
+  </ul>
+</section>
+
+<hr class="section-divider">
+
+<section class="about">
+  <h2>Informazioni su questo progetto</h2>
+  <p>Le Portable Linux Apps sono applicazioni standalone per GNU/Linux che possono funzionare ovunque, anche su una chiavetta USB. Possono essere pacchetti AppImage o archivi standalone. Ogni app ha il proprio script di installazione, in stile PKGBUILD, gestito dal <a href="https://github.com/ivan-hc/AM">package manager AM</a>.</p>
+  <p>Questo catalogo è open source. Puoi contribuire modificando le pagine, aggiungendo le informazioni mancanti o migliorando il database.</p>
+</section>
+
+<hr class="section-divider">
+
+<section id="install">
+  <h2>Installare le app elencate in questo sito</h2>
+  <p class="install-intro">Ogni app su questo sito ha il proprio script di installazione, in stile PKGBUILD, gestito dal package manager AM. Scegli lo strumento che fa più al caso tuo:</p>
+
+  <div class="carousel" id="app-carousel" aria-roledescription="carousel" aria-label="Ways to install and manage the apps">
+    <div class="carousel-viewport">
+      <div class="carousel-track">
+
+        <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+          <div class="slide-head">
+            <h3>AM / AppMan</h3>
+            <p class="slide-desc">Il primo gestore di AppImage e app portabili ispirato ad AUR e ricco di funzionalità. Installa, aggiorna, rimuovi e integra tutte le tue app dalla riga di comando &mdash; a livello di sistema con AM, o completamente portabile con AppMan.</p>
+            <a class="slide-link" href="https://github.com/ivan-hc/AM">AM su GitHub &rarr;</a>
+          </div>
+          <div class="ascii-grid">
+            <div class="ascii-tile">
+              <div class="ascii-player" data-cast="/casts/sandbox.cast" role="img" aria-label="Guarda la demo di AM: mettere in sandbox le AppImage"></div>
+              <span class="ascii-title">mettere in sandbox le AppImage</span>
+            </div>
+            <div class="ascii-tile">
+              <div class="ascii-player" data-cast="/casts/list.cast" role="img" aria-label="Guarda la demo di AM: elencare le app disponibili"></div>
+              <span class="ascii-title">elencare le app disponibili</span>
+            </div>
+            <div class="ascii-tile">
+              <div class="ascii-player" data-cast="/casts/about.cast" role="img" aria-label="Guarda la demo di AM: info sulle app"></div>
+              <span class="ascii-title">info sulle app</span>
+            </div>
+            <div class="ascii-tile">
+              <div class="ascii-player" data-cast="/casts/install.cast" role="img" aria-label="Guarda la demo di AM: installare applicazioni"></div>
+              <span class="ascii-title">installare applicazioni</span>
+            </div>
+            <div class="ascii-tile">
+              <div class="ascii-player" data-cast="/casts/query.cast" role="img" aria-label="Guarda la demo di AM: interrogare le liste usando parole chiave"></div>
+              <span class="ascii-title">interrogare le liste usando parole chiave</span>
+            </div>
+            <div class="ascii-tile">
+              <div class="ascii-player" data-cast="/casts/files.cast" role="img" aria-label="Guarda la demo di AM: mostrare le app installate"></div>
+              <span class="ascii-title">mostrare le app installate</span>
+            </div>
+            <div class="ascii-tile">
+              <div class="ascii-player" data-cast="/casts/snapshot.cast" role="img" aria-label="Guarda la demo di AM: creare e ripristinare snapshot"></div>
+              <span class="ascii-title">creare e ripristinare snapshot</span>
+            </div>
+            <div class="ascii-tile">
+              <div class="ascii-player" data-cast="/casts/update.cast" role="img" aria-label="Guarda la demo di AM: aggiornare tutto"></div>
+              <span class="ascii-title">aggiornare tutto</span>
+            </div>
+            <div class="ascii-tile">
+              <div class="ascii-player" data-cast="/casts/nolibfuse.cast" role="img" aria-label="Guarda la demo di AM: sbarazzarsi di libfuse2"></div>
+              <span class="ascii-title">sbarazzarsi di libfuse2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+          <div class="slide-head">
+            <h3>AM-GUI</h3>
+            <p class="slide-desc">[In sviluppo] Un'interfaccia grafica per il package manager AM. Sfoglia, installa e aggiorna le app con pochi clic, senza bisogno del terminale.</p>
+            <a class="slide-link" href="https://github.com/Shikakiben/AM-GUI">AM-GUI su GitHub &rarr;</a>
+          </div>
+          <div class="shot-grid">
+            <img class="shot-img" loading="lazy" src="https://github.com/Shikakiben/AM-GUI/blob/main/screenshots/dark.png?raw=true" alt="AM-GUI dark theme">
+            <img class="shot-img" loading="lazy" src="https://github.com/kazam0180/pla-site-testing/blob/main/am-gui/1.webp?raw=true" alt="AM-GUI screenshot 1">
+            <img class="shot-img" loading="lazy" src="https://github.com/kazam0180/pla-site-testing/blob/main/am-gui/2.webp?raw=true" alt="AM-GUI screenshot 2">
+            <img class="shot-img" loading="lazy" src="https://github.com/kazam0180/pla-site-testing/blob/main/am-gui/3.webp?raw=true" alt="AM-GUI screenshot 3">
+          </div>
+        </div>
+
+        <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+          <div class="slide-head">
+            <h3>AppGallery</h3>
+            <p class="slide-desc">[In sviluppo] Frontend GTK per AM</p>
+            <a class="slide-link" href="https://gitlab.com/kazamOS/appgallery">AppGallery su GitLab &rarr;</a>
+          </div>
+          <div class="shot-grid">
+            <img class="shot-img" loading="lazy" src="https://gitlab.com/kazamOS/appgallery/-/raw/main/images/1.webp?ref_type=heads" alt="AppGallery screenshot 1">
+            <img class="shot-img" loading="lazy" src="https://gitlab.com/kazamOS/appgallery/-/raw/main/images/2.webp?ref_type=heads" alt="AppGallery screenshot 2">
+            <img class="shot-img" loading="lazy" src="https://gitlab.com/kazamOS/appgallery/-/raw/main/images/3.webp?ref_type=heads" alt="AppGallery screenshot 3">
+            <img class="shot-img" loading="lazy" src="https://gitlab.com/kazamOS/appgallery/-/raw/main/images/4.webp?ref_type=heads" alt="AppGallery screenshot 4">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous slide">&#10094;</button>
+    <button type="button" class="carousel-arrow carousel-next" aria-label="Next slide">&#10095;</button>
+
+    <div class="carousel-dots" aria-label="Choose slide"></div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section id="faq">
+  <h2>FAQ</h2>
+
+  <div class="faq-page">
+
+  <details>
+  <summary id="faq-1"><h2>Come faccio a far funzionare il pulsante di installazione?</h2></summary>
+  <p><em>Il pulsante "Installa" su ogni pagina app usa il protocollo <code>pla-install://</code>. Hai bisogno di un'applicazione helper per gestirlo. Attualmente, hai le seguenti opzioni:</em></p>
+  <ul>
+    <li><a href="https://github.com/ivan-hc/AM">AM</a> or <a href="https://github.com/ivan-hc/AppMan">AppMan</a></li>
+    <li><a href="https://github.com/Shikakiben/AM-GUI">AM-GUI</a></li>
+    <li><a href="https://gitlab.com/kazamOS/appgallery">AppGallery</a></li>
+  </ul>
+  </details>
+
+  <details>
+  <summary id="faq-2"><h2>Cosa sono le portable linux apps?</h2></summary>
+  <p><em>Le Portable Linux Apps sono applicazioni standalone per GNU/Linux che possono (teoricamente) funzionare ovunque, anche su una chiavetta USB. Queste applicazioni possono essere pacchetti AppImage (vedi <a href="https://appimage.org/">appimage.org</a>) o archivi standalone (ad esempio Firefox, Thunderbird...).</em></p>
+  </details>
+
+  <details>
+  <summary id="faq-3"><h2>In cosa differisce questo sito dagli altri siti che elencano pacchetti AppImage?</h2></summary>
+  <p><em>Questo catalogo mira a censire ed elencare tutti gli AppImage e i programmi autonomi, e mira a fornire un punto centralizzato dove puoi documentarti sulle singole app e dove puoi facilmente raggiungere gli URL delle fonti, sia attraverso le pagine dedicate a ogni app che leggendo gli "script di installazione".</em></p>
+  <p><em>Sì, ogni app ha il proprio script di installazione, in stile PKGBUILD, ma con un package manager alternativo chiamato "<a href="https://github.com/ivan-hc/AM">AM</a>", che funziona come i più classici APT, PacMan/YAY, DNF... e che può quindi posizionarli in percorsi specifici del filesystem, come qualsiasi programma, e permette aggiornamenti tramite un sistema di script chiamato "AM-updater". Se un'app non può aggiornarsi da sola, lo script dedicato "AM-updater" userà un metodo specifico per l'applicazione per aggiornare sempre le tue app preferite all'ultima versione. DAVVERO!</em></p>
+  <p><em>Questo catalogo è open source. Puoi modificare le sue pagine, aggiornarle e vedere le fonti chiaramente, come un "wiki".</em></p>
+
+  <h3>Informazioni su altri cataloghi</h3>
+  <p><em>Pur riconoscendo il ruolo che hanno avuto finora nel supportare la diffusione di AppImage come formato di packaging, nel corso degli anni, da ex utente, vorrei sottolineare cosa mi ha portato ad aprire un catalogo alternativo:</em></p>
+  <ul>
+    <li><em>"<a href="https://appimage.github.io/">appimage.github.io</a>" serve prima di tutto a catalogare gli AppImage basandosi su processi di validazione basati su Github Actions (cioè che il pacchetto è compatibile con vecchie versioni di Ubuntu LTS). Dal punto di vista dello sviluppatore va bene, ma <strong>dal punto di vista dell'utente che cerca pacchetti AppImage senza addentrarsi nelle profondità di internet, è totalmente inutile</strong>. Come catalogo si limita a mostrare solo che un'app esiste o è esistita in passato, senza preoccuparsi di <strong>pacchetti obsoleti che non esistono più, ma ancora elencati solo "per fare numero"</strong>. Molte pagine non hanno pulsanti per le fonti e tutte le pagine non hanno informazioni aggiuntive sulle singole app, <strong>ogni pagina è semplicemente un messaggio di copia/incolla</strong> che dice che l'app "è disponibile come AppImage il che significa una app = un file..." eccetera eccetera.</em></li>
+    <li><em>"<a href="https://www.appimagehub.com/">appimagehub.com</a>" ospita applicazioni non sempre fornite dallo sviluppatore originale, basta controllare il profilo di chi ha caricato l'applicazione e quanti "prodotti" hanno caricato. Alcuni ammettono di non essere gli sviluppatori, nonostante abbiano un pulsante di donazione disponibile, effettivamente <strong>portandoli a guadagnare sul lavoro altrui</strong>, e sono spesso abbastanza avidi da non includere la fonte reale! Questi profili usano servizi di hosting casuali per queste applicazioni, e le API di Pling non permettono di verificare chiaramente l'origine di qualsiasi pacchetto scaricato. Non c'è controllo su questo, e l'unico controllo di validità di un "prodotto" è il feedback degli utenti che lo usano, e che in ogni caso <strong>non è sufficiente né per garantire la sicurezza di un'app, né per fare giustizia al proprietario reale di quel pacchetto, che è stato infatti "derubato" del suo lavoro</strong>.</em></li>
+  </ul>
+  <p><em>Inoltre, <strong>nessuno di essi traccia gli aggiornamenti in modo coerente</strong>.</em></p>
+  <p><em>Dai difetti sopra menzionati ho capito cosa un catalogo di applicazioni portabili NON deve fare per essere affidabile.</em></p>
+  </details>
+
+  <details>
+  <summary id="faq-4"><h2>Come posso migliorare le pagine di questo sito?</h2></summary>
+  <p><em>Tutti i dati delle app sono memorizzati in un formato simile al markdown provenienti dalla <a href="https://github.com/ivan-hc/AM/blob/main/programs/x86_64-apps">lista applicazioni AM</a>. Ogni app ha un file corrispondente nella cartella <code>apps/</code> con la sua descrizione, siti, fonti e screenshot, generato dal <a href="https://gitlab.com/kazam0180/pla-site-tool"><code>pla-site-tool</code></a>.</em></p>
+  <ul>
+    <li><em>le icone delle app devono essere file PNG 128x128 posizionati nella cartella <code>icons/</code>, nominati come l'app;</em></li>
+    <li><em>le liste delle applicazioni sono generate automaticamente da <a href="https://gitlab.com/kazam0180/pla-site-tool">questo script</a>. Qualsiasi modifica alle liste e descrizioni deve essere fatta su <a href="https://github.com/ivan-hc/AM/blob/main/programs/x86_64-apps">questo file</a>, che è la lista generale delle app gestite da "AM"/"AppMan";</em></li>
+  </ul>
+  <p><em>Per qualsiasi suggerimento, apri un'<a href="https://github.com/ivan-hc/AM/issues">issue</a> su https://github.com/ivan-hc/AM o una <a href="https://github.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/pulls">pull request</a> su https://github.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io</em></p>
+  </details>
+
+  <details>
+  <summary id="faq-5"><h2>Come posso aggiungere o migliorare le informazioni su un'app in questo sito?</h2></summary>
+  <p><em>Se vuoi migliorare la pagina di un'app in questo catalogo (ad es. aggiungere una descrizione più dettagliata, screenshot, siti, ecc.), continua a leggere.</em></p>
+  <p><em>I file delle app nella cartella <code>apps</code> sono in un formato simile al markdown, la descrizione deve essere racchiusa tra le righe <code>===</code>.</em></p>
+  <ol>
+    <li>Crea un file di testo come questo:
+<pre>
+# some app
+
+===
+description of your app. must be within the `===` lines.
+only use **bold**, *italic*, ++underline++, lists markdown here
+- do not add links or images here
+- use SOURCES field if you package someone else's app
+===
+
+# SCREENSHOTS: https://Portable-Linux-Apps.github.io/contribute_ss.webp
+# SITES: https://someapp.io
+# SOURCES: https://github.com/name/someapp-appimage
+# BUTTONS: Label_of_Button::https://discord.gg Donation_Link::https://someapp.io/donate
+</pre>
+      <p><em>Spiegazione dei campi:</em></p>
+      <ul>
+        <li><em><code>SCREENSHOTS</code>: una lista di URL di immagini separati da spazi</em></li>
+        <li><em><code>SITES</code>: URL dei siti che forniscono l'AppImage, separati da spazi</em></li>
+        <li><em><code>SOURCES</code>: se stai impacchettando l'app di qualcun altro, collega qui il/i repository git</em></li>
+        <li><em><code>BUTTONS</code>: definizioni di pulsanti separate da spazi nella forma <code>Titolo_Pulsante::URL</code></em></li>
+      </ul>
+    </li>
+    <li>Copia l'icona dell'app (deve avere lo stesso nome) nella cartella <code>icons</code>.</li>
+  </ol>
+  </details>
+
+  <details>
+  <summary><h2>Esiste un repository centralizzato per i pacchetti AppImage?</h2></summary>
+  <p><em>Dipende da cosa intendi per "<strong>repository centralizzato di pacchetti</strong>", se intendi un repository che li memorizza tutti come le distribuzioni basate su Debian con i pacchetti DEB, no, ci sono migliaia di pacchetti, e sono solitamente distribuiti su siti remoti e difficili da trovare.</em></p>
+  <p><em>Se invece intendi un repo stile AUR con script che trovano facilmente tutti gli AppImage, <strong>sei nel posto giusto!</strong></em></p>
+  <p><em>Questo catalogo e la sua CLI, "<a href="https://github.com/ivan-hc/AM">AM</a>", ti facilitano la ricerca, l'installazione, l'integrazione e l'aggiornamento di tutti i pacchetti AppImage!</em></p>
+  <p><em>Questo catalogo è solo il frontend di un database in continua crescita che mira a estendersi non solo alle app per architettura x86_64 elencate qui, ma anche a tutte le altre, dalle moderne ARM64/aarch64 alle più vecchie i686, come soluzione universale per tutti gli AppImage e i programmi portabili per GNU/Linux!</em></p>
+  </details>
+
+  <details>
+  <summary id="faq-6"><h2>Ho bisogno di aiuto con qualcosa</h2></summary>
+  <p><em>Consulta la <a href="wiki.html">wiki</a> per guide e documentazione.</em></p>
+  <p><em>Se hai ancora bisogno di aiuto, apri un'<a href="https://github.com/ivan-hc/AM/issues">issue</a> su GitHub.</em></p>
+  <p><em>Puoi anche unirti al <a href="https://discord.gg/uxvPepQUkY">Discord pkgforge</a> per chiedere direttamente alla community.</em></p>
+  </details>
+
+  <details>
+  <summary id="faq-7"><h2>Perché non posso eseguire gli script di installazione in modo indipendente?</h2></summary>
+  <p><em>NOTA: gli script di installazione nella colonna &quot;INSTALLER&quot; sono destinati all'uso tramite &quot;AM&quot;, e sono quindi dedicati a un'installazione di sistema
+    delle applicazioni (in /opt), e tutto ciò che &quot;AppMan&quot; fa è convertire quegli script per l'installazione locale, modificando i percorsi.
+    <strong>Sono elencati qui solo a scopo di lettura</strong>!</em></p>
+<p><em>Se decidi di eseguirli manualmente, l'unico modo per rimuovere l'applicazione è eseguire il
+    comando <code>sudo /opt/appname/remove</code>, dove &quot;appname&quot; è il nome della directory dell'applicazione che contiene lo script &quot;remove&quot;.
+    Allo stesso modo, puoi anche aggiornare le applicazioni eseguendo lo script &quot;AM-updater&quot; nella stessa directory.</em></p>
+<p><em>Il progetto &quot;AM&quot; permette l'autonomia delle app installate, indipendentemente dalla presenza di &quot;AM&quot; stesso nel sistema. Tuttavia, è fortemente
+    consigliato usare &quot;AM&quot; e &quot;AppMan&quot; per sfruttare appieno tutti i vantaggi che si possono ottenere da un'applicazione installata in questo modo.</em></p>
+<p><em>Se sei qui solo per scaricare le app manualmente, clicca sul nome del programma e controlla gli URL nella pagina dell'applicazione. Questo sito non
+    fornisce collegamenti diretti, per motivi di sicurezza, ma fornisce le fonti esatte e i riferimenti dove puoi trovarli!</em></p>
+<p><em>Trasparenza e credibilità sono il focus di questo catalogo. Buona esplorazione!</em></p>
+  </details>
+
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="footer-links">
+    <a href="#">Home</a>
+    <a href="apps.html">App</a>
+    <a href="#faq">FAQ</a>
+    <a href="wiki.html">Wiki</a>
+  </div>
+  <div class="footer-links">
+    <a href="https://ko-fi.com/IvanAlexHC">ko-fi.com</a>
+    <a href="https://paypal.me/IvanAlexHC">PayPal.me</a>
+    <a href="https://github.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
+  <p>&copy; 2020-presente Ivan Alessandro Sala aka 'Ivan-HC' &mdash; Sono qui solo per divertimento!</p>
+</footer>
+
+<script src="/Portable-Linux-Apps.github.io/assets/js/asciinema-player.min.js"></script>
+<script src="/Portable-Linux-Apps.github.io/assets/js/casts.js"></script>
+<script src="/Portable-Linux-Apps.github.io/assets/js/carousel.js"></script>
+<script src="/Portable-Linux-Apps.github.io/assets/js/dropdown.js"></script>
+<script>
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+var homeAppCache = [];
+var homeAppNodes = [];
+
+function renderHomeApps(data) {
+  var container = document.getElementById('app-list');
+  var lang = document.getElementById('lang');
+  var lang_value = lang ? lang.innerHTML : 'en';
+  var arch = document.getElementById('home-arch-select');
+  var arch_value = arch && arch.value ? arch.value : 'x86_64';
+  var html = '<div class="app-list">';
+  for (var i = 0; i < data.length; i++) {
+    var app = data[i];
+    html += '<div class="app-item" data-index="' + i + '">';
+    html += '<img loading="lazy" src="/Portable-Linux-Apps.github.io/icons_48/' + encodeURIComponent(app.name) + '.webp" width="48" height="48" alt="icon for ' + escapeHtml(app.name) + '" onerror="this.src=\'/Portable-Linux-Apps.github.io/no-icon_48.webp\'" class="app-icon">';
+    html += '<div class="app-body">';
+    html += '<a href="/Portable-Linux-Apps.github.io/' + lang_value + '/app/' + encodeURIComponent(app.name) + '.html" class="app-name"><strong>' + escapeHtml(app.name) + '</strong></a>';
+    html += '<p class="app-desc">' + escapeHtml(app.description) + '</p>';
+    html += '</div>';
+    html += '<div class="app-links">';
+    var suiteMatch = app.description && app.description.match(/This is part of "([^"]+)"/);
+    var scriptName = suiteMatch ? suiteMatch[1] : app.name;
+    html += '<a href="https://github.com/ivan-hc/AM/blob/main/programs/' + encodeURIComponent(arch_value) + '/' + encodeURIComponent(scriptName) + '" class="install-link install-blob" data-script="' + encodeURIComponent(scriptName) + '">blob</a>';
+    html += '<a href="https://raw.githubusercontent.com/ivan-hc/AM/main/programs/' + encodeURIComponent(arch_value) + '/' + encodeURIComponent(scriptName) + '" class="install-link install-raw" data-script="' + encodeURIComponent(scriptName) + '">raw</a>';
+    html += '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  container.innerHTML = html;
+
+  homeAppNodes = [];
+  var items = container.querySelectorAll('.app-item');
+  for (var j = 0; j < items.length; j++) {
+    homeAppNodes.push(items[j]);
+  }
+}
+
+function filterHomeApps() {
+  var container = document.getElementById('app-list');
+  var list = container ? container.querySelector('.app-list') : null;
+  if (!list) return;
+  var input = document.getElementById('home-search-input');
+  var arch = document.getElementById('home-arch-select');
+  var terms = input ? input.value.toLowerCase().split(/\s+/).filter(Boolean) : [];
+  var selectedArch = arch ? arch.value : '';
+  var matched = [];
+
+  var oldHeadings = list.querySelectorAll('.app-group-heading');
+  for (var h = 0; h < oldHeadings.length; h++) oldHeadings[h].remove();
+  var oldEmpty = container.querySelector('.search-empty-state');
+  if (oldEmpty) oldEmpty.remove();
+
+  for (var k = 0; k < homeAppNodes.length; k++) {
+    var matchesSearch = !terms.length ||
+      terms.every(function(t) {
+        return homeAppCache[k].name.indexOf(t) !== -1 ||
+               homeAppCache[k].desc.indexOf(t) !== -1;
+      });
+    var matchesArch = !selectedArch ||
+      homeAppCache[k].archs.some(function(a) { return a === selectedArch; });
+    var visible = matchesSearch && matchesArch;
+    homeAppNodes[k].style.display = visible ? '' : 'none';
+    if (visible) matched.push({ index: k, rank: terms.length ? matchRank(k, terms) : 0 });
+  }
+
+  var countEl = document.getElementById('results-count');
+
+  if (matched.length === 0) {
+    if (countEl) countEl.textContent = '';
+    list.style.display = 'none';
+
+    var emptyDiv = document.createElement('div');
+    emptyDiv.className = 'search-empty-state';
+    var rawTerm = input ? input.value.trim() : '';
+    var message = rawTerm ? 'No applications found matching "' + escapeHtml(rawTerm) + '"' : 'No applications found';
+    var subMessage = selectedArch ? 'Try selecting "All architectures" or broadening your search keywords.' : 'Check for typos or try searching with different keywords.';
+    emptyDiv.innerHTML =
+      '<div class="search-empty-icon">' +
+        '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">' +
+          '<circle cx="11" cy="11" r="8"></circle>' +
+          '<line x1="21" y1="21" x2="16.65" y2="16.65"></line>' +
+          '<line x1="8" y1="11" x2="14" y2="11"></line>' +
+        '</svg>' +
+      '</div>' +
+      '<h3>' + message + '</h3>' +
+      '<p class="search-empty-hint">' + subMessage + '</p>' +
+      '<button type="button" class="search-empty-reset">Clear search</button>';
+
+    emptyDiv.querySelector('.search-empty-reset').addEventListener('click', function() {
+      if (input) input.value = '';
+      if (arch) arch.value = '';
+      var resultsSection = document.getElementById('search-results');
+      var categoriesSection = document.getElementById('categories-section');
+      if (resultsSection) resultsSection.style.display = 'none';
+      if (categoriesSection) categoriesSection.style.display = '';
+      if (input) input.focus();
+    });
+
+    container.appendChild(emptyDiv);
+    return;
+  }
+
+  list.style.display = '';
+  if (countEl) countEl.textContent = matched.length + ' results';
+
+  if (terms.length) {
+    matched.sort(function(a, b) {
+      return a.rank !== b.rank ? a.rank - b.rank : homeAppCache[a.index].name.localeCompare(homeAppCache[b.index].name);
+    });
+  }
+
+  var RANK_LABELS = ['Exact match', 'Name match', 'Name match', 'Description match'];
+  var lastLabel = null;
+  for (var m = 0; m < matched.length; m++) {
+    var entry = matched[m];
+    if (terms.length) {
+      var label = RANK_LABELS[entry.rank];
+      if (label !== lastLabel) {
+        var heading = document.createElement('div');
+        heading.className = 'app-group-heading';
+        heading.textContent = label;
+        list.appendChild(heading);
+        lastLabel = label;
+      }
+    }
+    list.appendChild(homeAppNodes[entry.index]);
+  }
+}
+
+function matchRank(k, terms) {
+  var name = homeAppCache[k].name;
+  if (terms.length === 1 && name === terms[0]) return 0;
+  var nameHit = terms.every(function(t) { return name.indexOf(t) !== -1; });
+  if (!nameHit) return 3;
+  return name.indexOf(terms[0]) === 0 ? 1 : 2;
+}
+
+function loadAndShowResults(jsonUrl, title) {
+  var resultsSection = document.getElementById('search-results');
+  var categoriesSection = document.getElementById('categories-section');
+  var titleEl = document.getElementById('search-results-title');
+  if (titleEl) titleEl.textContent = title || 'Risultati di ricerca';
+
+  resultsSection.style.display = '';
+  categoriesSection.style.display = 'none';
+
+  fetch(jsonUrl)
+    .then(function(r) { return r.json() })
+    .then(function(data) {
+      var dataArray = [];
+      for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+          dataArray.push({ name: key, description: data[key].description, archs: data[key].archs || [] });
+        }
+      }
+
+      homeAppCache = [];
+      for (var i = 0; i < dataArray.length; i++) {
+        homeAppCache.push({
+          name: dataArray[i].name.toLowerCase(),
+          desc: dataArray[i].description ? dataArray[i].description.toLowerCase() : '',
+          archs: dataArray[i].archs || []
+        });
+      }
+
+      renderHomeApps(dataArray);
+      filterHomeApps();
+    })
+    .catch(function(err) {
+      document.getElementById('app-list').innerHTML = '<p>Failed to load apps.</p>' + err;
+    });
+}
+
+function handleHomeSearch(event) {
+  event.preventDefault();
+  loadAndShowResults('/Portable-Linux-Apps.github.io/apps.json', 'Risultati di ricerca');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var input = document.getElementById('home-search-input');
+  var arch = document.getElementById('home-arch-select');
+
+  function triggerSearch() {
+    var val = input ? input.value.trim() : '';
+    var a = arch ? arch.value : '';
+    if (val || a) {
+      if (!homeAppCache.length) {
+        loadAndShowResults('/Portable-Linux-Apps.github.io/apps.json', 'Risultati di ricerca');
+      } else {
+        var resultsSection = document.getElementById('search-results');
+        var categoriesSection = document.getElementById('categories-section');
+        if (resultsSection) resultsSection.style.display = '';
+        if (categoriesSection) categoriesSection.style.display = 'none';
+        filterHomeApps();
+      }
+    } else {
+      var resultsSection = document.getElementById('search-results');
+      var categoriesSection = document.getElementById('categories-section');
+      if (resultsSection) resultsSection.style.display = 'none';
+      if (categoriesSection) categoriesSection.style.display = '';
+    }
+  }
+
+  if (input) {
+    var timer;
+    input.addEventListener('input', function() {
+      clearTimeout(timer);
+      timer = setTimeout(triggerSearch, 150);
+    });
+  }
+
+  if (arch) {
+    arch.addEventListener('change', triggerSearch);
+  }
+});
+</script>
+
+</body>
+</html>

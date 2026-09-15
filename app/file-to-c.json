@@ -1,0 +1,1 @@
+{"name":"file-to-c","description":"Tool for generating a C header (i.e. a .h containing an array variable) from a spir-v binary file","screenshots":["/contribute_ss.webp"],"sites":["https://github.com/Wallby/file-to-c"],"archived":true,"obsolete":2023}

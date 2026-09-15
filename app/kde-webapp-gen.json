@@ -1,0 +1,1 @@
+{"name":"kde-webapp-gen","description":"A native Qt6/PyQt6 utility for KDE Plasma to create and manage custom browser webapps with isolated profiles, custom window sizes, and automated KWin window rules for perfect Wayland/X11 taskbar icon grouping.","screenshots":["/contribute_ss.webp","/contribute_ss.webp"],"sites":["https://github.com/satodu/kde-webapp-gen"],"archived":false}

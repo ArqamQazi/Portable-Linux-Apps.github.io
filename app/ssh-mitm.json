@@ -1,0 +1,1 @@
+{"name":"ssh-mitm","description":"ssh mitm server for security audits supporting public key  authentication, session hijacking and file manipulation.","screenshots":["/contribute_ss.webp"],"sites":["https://github.com/ssh-mitm/ssh-mitm"],"archived":false}
